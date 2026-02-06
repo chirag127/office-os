@@ -11,7 +11,6 @@ import { routes } from './core/routes';
 // Services
 import { monitoring } from './services/monitoring';
 import { monetizationService } from './services/monetization';
-import { puterService } from './services/puter';
 // import { firebaseService } from './services/firebase'; // Lazy load if needed, or init here
 
 // Initialize the application
@@ -19,7 +18,6 @@ async function init() {
   // Initialize Core Services (APEX Stack)
   monitoring.init();
   monetizationService.init();
-  puterService.init();
   // firebaseService is auto-initialized on import if enabled
 
   // Render the shell

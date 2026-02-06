@@ -484,81 +484,7 @@ const imageRoutes: Route[] = [
   },
 ];
 
-// AI Tools Routes
-const aiRoutes: Route[] = [
-  {
-    path: '/apps/ai/ocr',
-    title: 'OCR Scanner',
-    component: async () => {
-      const { renderOCR } = await import('../apps/ai/ocr/index');
-      return renderOCR();
-    },
-    meta: {
-      description: 'Extract text from images using AI-powered OCR. Scan documents, receipts, and photos to get editable text.',
-      keywords: 'OCR, image to text, extract text from image, scan document, text recognition',
-    },
-  },
-  {
-    path: '/apps/ai/summarize',
-    title: 'Summarize Document',
-    component: async () => {
-      const { renderSummarize } = await import('../apps/ai/summarize/index');
-      return renderSummarize();
-    },
-    meta: {
-      description: 'Summarize documents using AI. Get key points and bullet summaries from long texts and PDFs.',
-      keywords: 'summarize document, AI summary, text summarizer, document summary',
-    },
-  },
-  {
-    path: '/apps/ai/chat-doc',
-    title: 'Chat with PDF',
-    component: async () => {
-      const { renderChatDoc } = await import('../apps/ai/chat-doc/index');
-      return renderChatDoc();
-    },
-    meta: {
-      description: 'Chat with your PDF documents. Ask questions and get answers from your uploaded files using AI.',
-      keywords: 'chat with PDF, ask PDF, AI document chat, PDF Q&A',
-    },
-  },
-  {
-    path: '/apps/ai/translator',
-    title: 'Document Translator',
-    component: async () => {
-      const { renderTranslator } = await import('../apps/ai/translator/index');
-      return renderTranslator();
-    },
-    meta: {
-      description: 'Translate documents to any language using AI. Free online document translation tool.',
-      keywords: 'translate document, AI translator, document translation, text translator',
-    },
-  },
-  {
-    path: '/apps/ai/quiz',
-    title: 'Quiz Generator',
-    component: async () => {
-      const { renderQuizGenerator } = await import('../apps/ai/quiz/index');
-      return renderQuizGenerator();
-    },
-    meta: {
-      description: 'Generate quizzes from your notes using AI. Create multiple choice and study questions automatically.',
-      keywords: 'quiz generator, create quiz, AI quiz maker, study questions',
-    },
-  },
-  {
-    path: '/apps/ai/rewrite',
-    title: 'Text Rewriter',
-    component: async () => {
-      const { renderRewrite } = await import('../apps/ai/rewrite/index');
-      return renderRewrite();
-    },
-    meta: {
-      description: 'Rewrite and improve text using AI. Make text more professional, casual, or academic.',
-      keywords: 'rewrite text, paraphrase, improve writing, AI rewriter',
-    },
-  },
-];
+
 
 // Text & Code Routes
 const textRoutes: Route[] = [
@@ -745,7 +671,6 @@ export const routes: Route[] = [
   dashboardRoute,
   ...pdfRoutes,
   ...imageRoutes,
-  ...aiRoutes,
   ...textRoutes,
   ...utilityRoutes,
   ...infoRoutes,

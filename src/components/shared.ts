@@ -310,9 +310,4 @@ export function initFileUpload(
       onFilesSelected(e.dataTransfer.files);
     }
   });
-
-  // Click to open file dialog
-  zone.addEventListener('click', () => {
-    input.click();
-  });
 }

@@ -220,7 +220,7 @@ class Shell {
       { path: '/', label: 'Home', icon: icons.home },
       { path: '/apps/pdf/merge', label: 'PDF', icon: icons.pdf },
       { path: '/apps/img/compress', label: 'Image', icon: icons.image },
-      { path: '/apps/ai/ocr', label: 'AI', icon: icons.ai },
+      { path: '/apps/text/markdown', label: 'Text', icon: icons.text },
       { path: '/apps/util/qrcode', label: 'Utils', icon: icons.utility },
     ];
 
