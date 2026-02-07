@@ -30,7 +30,7 @@ export const APEX_CONFIG = {
     // STRATEGY: Use for Popunders and "Direct Link" buttons
     adsterra: {
       popunderScript: 'https://pl28614694.effectivegatecpm.com/87/f5/4e/87f54e4fd25208c387bbd464ee1c6769.js',
-      enabled: true,
+      enabled: false, // DISABLED: Popunders too aggressive
     },
 
     // [BACKUP 2] Monetag (PropellerAds)
@@ -38,7 +38,7 @@ export const APEX_CONFIG = {
     // STRATEGY: Aggressive Popunders / Interstitials
     monetag: {
       zoneId: '10545951',
-      enabled: true,
+      enabled: false, // DISABLED: Smart links/popunders too aggressive
     },
 
     // [BACKUP 3] HilltopAds
@@ -48,7 +48,7 @@ export const APEX_CONFIG = {
       socialBarZoneId: '6761813',
       videoVastZoneId: '6761811',
       popunderZoneId: '6761807',
-      enabled: true,
+      enabled: false, // DISABLED: Popunders too aggressive
     },
 
     // [BACKUP 4] A-ADS (Anonymous Ads)
