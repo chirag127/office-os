@@ -10,16 +10,16 @@ import type { Route } from './Router';
 const icons = {
   home: '🏠',
   pdf: '📄',
-  image: '🖼️',
-  ai: '🤖',
-  text: '📝',
-  utility: '🔧',
+  organize: '📑',
+  optimize: '⚡',
+  convert: '🔄',
+  edit: '✏️',
+  security: '🔒',
   info: 'ℹ️',
   menu: '☰',
   close: '✕',
   sun: '☀️',
   moon: '🌙',
-  search: '🔍',
 };
 
 export interface NavItem {
@@ -33,8 +33,7 @@ export interface NavSection {
   items: NavItem[];
 }
 
-// Navigation structure
-// Navigation structure
+// Navigation structure - PDF-only tools
 export const navigation: NavSection[] = [
   {
     title: 'Home',
@@ -43,73 +42,62 @@ export const navigation: NavSection[] = [
     ],
   },
   {
-    title: 'PDF Actions',
+    title: 'Organize PDF',
     items: [
       { path: '/apps/pdf/merge', label: 'Merge PDF', icon: icons.pdf },
       { path: '/apps/pdf/split', label: 'Split PDF', icon: icons.pdf },
-      { path: '/apps/pdf/organize', label: 'Organize Pages', icon: icons.pdf },
-      { path: '/apps/pdf/compress', label: 'Compress PDF', icon: icons.pdf },
+      { path: '/apps/pdf/remove-pages', label: 'Remove Pages', icon: icons.pdf },
+      { path: '/apps/pdf/extract-pages', label: 'Extract Pages', icon: icons.pdf },
+      { path: '/apps/pdf/organize', label: 'Organize PDF', icon: icons.pdf },
       { path: '/apps/pdf/scan', label: 'Scan to PDF', icon: icons.pdf },
-      { path: '/apps/pdf/repair', label: 'Repair PDF', icon: icons.pdf },
-      { path: '/apps/pdf/ocr', label: 'OCR PDF', icon: icons.pdf },
     ],
   },
   {
-    title: 'PDF Conversions',
+    title: 'Optimize PDF',
     items: [
-      { path: '/apps/pdf/to-word', label: 'PDF to Word', icon: icons.pdf },
-      { path: '/apps/pdf/to-excel', label: 'PDF to Excel', icon: icons.pdf },
-      { path: '/apps/pdf/to-ppt', label: 'PDF to PPT', icon: icons.pdf },
-      { path: '/apps/pdf/to-jpg', label: 'PDF to JPG', icon: icons.pdf },
-      { path: '/apps/pdf/from-jpg', label: 'JPG to PDF', icon: icons.pdf },
-      { path: '/apps/text/ppt-to-pdf', label: 'PPT to PDF', icon: icons.pdf },
-      { path: '/apps/text/excel-to-pdf', label: 'Excel to PDF', icon: icons.pdf },
-      { path: '/apps/text/html-to-pdf', label: 'HTML to PDF', icon: icons.pdf },
-      { path: '/apps/pdf/pdf-a', label: 'Convert to PDF/A', icon: icons.pdf },
+      { path: '/apps/pdf/compress', label: 'Compress PDF', icon: icons.optimize },
+      { path: '/apps/pdf/repair', label: 'Repair PDF', icon: icons.optimize },
+      { path: '/apps/pdf/ocr', label: 'OCR PDF', icon: icons.optimize },
     ],
   },
   {
-    title: 'PDF Edit & Secure',
+    title: 'Convert to PDF',
     items: [
-      { path: '/apps/pdf/rotate', label: 'Rotate PDF', icon: icons.pdf },
-      { path: '/apps/pdf/watermark', label: 'Watermark PDF', icon: icons.pdf },
-      { path: '/apps/pdf/page-numbers', label: 'Page Numbers', icon: icons.pdf },
-      { path: '/apps/pdf/redact', label: 'Redact PDF', icon: icons.pdf },
-      { path: '/apps/pdf/sign', label: 'Sign PDF', icon: icons.pdf },
-      { path: '/apps/pdf/protect', label: 'Protect PDF', icon: icons.pdf },
-      { path: '/apps/pdf/unlock', label: 'Unlock PDF', icon: icons.pdf },
+      { path: '/apps/pdf/from-jpg', label: 'JPG to PDF', icon: icons.convert },
+      { path: '/apps/pdf/word-to-pdf', label: 'Word to PDF', icon: icons.convert },
+      { path: '/apps/pdf/ppt-to-pdf', label: 'PowerPoint to PDF', icon: icons.convert },
+      { path: '/apps/pdf/excel-to-pdf', label: 'Excel to PDF', icon: icons.convert },
+      { path: '/apps/pdf/html-to-pdf', label: 'HTML to PDF', icon: icons.convert },
     ],
   },
   {
-    title: 'Image Studio',
+    title: 'Convert from PDF',
     items: [
-      { path: '/apps/img/editor', label: 'Photo Editor', icon: icons.image },
-      { path: '/apps/img/compress', label: 'Compress Image', icon: icons.image },
-      { path: '/apps/img/rotate', label: 'Rotate Image', icon: icons.image },
-      { path: '/apps/img/watermark', label: 'Watermark Image', icon: icons.image },
-      { path: '/apps/img/upscale', label: 'Upscale (AI)', icon: icons.image },
-      { path: '/apps/img/blur-face', label: 'Blur Face', icon: icons.image },
-      { path: '/apps/img/html-to-image', label: 'HTML to Image', icon: icons.image },
+      { path: '/apps/pdf/to-jpg', label: 'PDF to JPG', icon: icons.convert },
+      { path: '/apps/pdf/to-word', label: 'PDF to Word', icon: icons.convert },
+      { path: '/apps/pdf/to-ppt', label: 'PDF to PowerPoint', icon: icons.convert },
+      { path: '/apps/pdf/to-excel', label: 'PDF to Excel', icon: icons.convert },
+      { path: '/apps/pdf/pdf-a', label: 'PDF to PDF/A', icon: icons.convert },
     ],
   },
   {
-    title: 'Text & Code',
+    title: 'Edit PDF',
     items: [
-      { path: '/apps/text/markdown', label: 'Markdown Editor', icon: icons.text },
-      { path: '/apps/text/json-csv', label: 'JSON ↔ CSV', icon: icons.text },
-      { path: '/apps/text/diff', label: 'Text Diff', icon: icons.text },
-      { path: '/apps/text/count', label: 'Word Counter', icon: icons.text },
-      { path: '/apps/text/lorem', label: 'Lorem Ipsum', icon: icons.text },
+      { path: '/apps/pdf/rotate', label: 'Rotate PDF', icon: icons.edit },
+      { path: '/apps/pdf/page-numbers', label: 'Add Page Numbers', icon: icons.edit },
+      { path: '/apps/pdf/watermark', label: 'Add Watermark', icon: icons.edit },
+      { path: '/apps/pdf/crop', label: 'Crop PDF', icon: icons.edit },
+      { path: '/apps/pdf/edit', label: 'Edit PDF', icon: icons.edit },
     ],
   },
   {
-    title: 'Utilities',
+    title: 'PDF Security',
     items: [
-      { path: '/apps/util/zip', label: 'Create ZIP', icon: icons.utility },
-      { path: '/apps/util/unzip', label: 'Extract ZIP', icon: icons.utility },
-      { path: '/apps/util/password', label: 'Password Gen', icon: icons.utility },
-      { path: '/apps/util/qrcode', label: 'QR Code', icon: icons.utility },
-      { path: '/apps/util/barcode', label: 'Barcode', icon: icons.utility },
+      { path: '/apps/pdf/unlock', label: 'Unlock PDF', icon: icons.security },
+      { path: '/apps/pdf/protect', label: 'Protect PDF', icon: icons.security },
+      { path: '/apps/pdf/sign', label: 'Sign PDF', icon: icons.security },
+      { path: '/apps/pdf/redact', label: 'Redact PDF', icon: icons.security },
+      { path: '/apps/pdf/compare', label: 'Compare PDF', icon: icons.security },
     ],
   },
   {
@@ -218,10 +206,10 @@ class Shell {
   private renderMobileNav(): string {
     const mainSections = [
       { path: '/', label: 'Home', icon: icons.home },
-      { path: '/apps/pdf/merge', label: 'PDF', icon: icons.pdf },
-      { path: '/apps/img/compress', label: 'Image', icon: icons.image },
-      { path: '/apps/text/markdown', label: 'Text', icon: icons.text },
-      { path: '/apps/util/qrcode', label: 'Utils', icon: icons.utility },
+      { path: '/apps/pdf/merge', label: 'Organize', icon: icons.organize },
+      { path: '/apps/pdf/compress', label: 'Optimize', icon: icons.optimize },
+      { path: '/apps/pdf/from-jpg', label: 'Convert', icon: icons.convert },
+      { path: '/apps/pdf/edit', label: 'Edit', icon: icons.edit },
     ];
 
     return `

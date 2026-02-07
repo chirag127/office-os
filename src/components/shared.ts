@@ -276,11 +276,18 @@ export function hideLoading(): void {
 
 /**
  * Initialize file upload drag and drop
+ * Uses a Set to prevent double-initialization which causes file dialog to open twice
  */
+const initializedUploads = new Set<string>();
+
 export function initFileUpload(
   uploadId: string,
   onFilesSelected: (files: FileList) => void
 ): void {
+  // Prevent double initialization
+  if (initializedUploads.has(uploadId)) return;
+  initializedUploads.add(uploadId);
+
   const zone = document.getElementById(`${uploadId}-zone`);
   const input = document.getElementById(uploadId) as HTMLInputElement;
 
