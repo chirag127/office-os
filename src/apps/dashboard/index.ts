@@ -17,73 +17,74 @@ interface ToolCategory {
 
 const categories: ToolCategory[] = [
   {
-    title: 'PDF Tools',
-    icon: '📄',
-    description: 'Edit, merge, split, and convert PDF files',
+    title: 'Organize PDF',
+    icon: '📑',
+    description: 'Merge, split, and organize PDF pages',
     tools: [
       { path: '/apps/pdf/merge', title: 'Merge PDF', description: 'Combine multiple PDFs', icon: '📑' },
       { path: '/apps/pdf/split', title: 'Split PDF', description: 'Extract pages from PDF', icon: '✂️' },
+      { path: '/apps/pdf/remove-pages', title: 'Remove Pages', description: 'Delete specific pages', icon: '🗑️' },
+      { path: '/apps/pdf/extract-pages', title: 'Extract Pages', description: 'Copy pages to new PDF', icon: '📄' },
+      { path: '/apps/pdf/organize', title: 'Organize PDF', description: 'Reorder and rotate', icon: '🔀' },
+      { path: '/apps/pdf/scan', title: 'Scan to PDF', description: 'Camera to PDF', icon: '📷' },
+    ],
+  },
+  {
+    title: 'Optimize PDF',
+    icon: '⚡',
+    description: 'Compress, repair, and optimize PDFs',
+    tools: [
       { path: '/apps/pdf/compress', title: 'Compress PDF', description: 'Reduce file size', icon: '📦' },
-      { path: '/apps/pdf/to-jpg', title: 'PDF to JPG', description: 'Convert pages to images', icon: '🖼️' },
-      { path: '/apps/pdf/from-jpg', title: 'JPG to PDF', description: 'Images to PDF', icon: '📷' },
-      { path: '/apps/pdf/sign', title: 'Sign PDF', description: 'Add signature', icon: '✍️' },
-      { path: '/apps/pdf/protect', title: 'Protect PDF', description: 'Add password', icon: '🔒' },
-      { path: '/apps/pdf/unlock', title: 'Unlock PDF', description: 'Remove password', icon: '🔓' },
-      { path: '/apps/pdf/watermark', title: 'Watermark', description: 'Add watermark', icon: '💧' },
+      { path: '/apps/pdf/repair', title: 'Repair PDF', description: 'Fix corrupted files', icon: '🔧' },
+      { path: '/apps/pdf/ocr', title: 'OCR PDF', description: 'Make searchable', icon: '👁️' },
+    ],
+  },
+  {
+    title: 'Convert to PDF',
+    icon: '📥',
+    description: 'Convert files to PDF format',
+    tools: [
+      { path: '/apps/pdf/from-jpg', title: 'JPG to PDF', description: 'Images to PDF', icon: '🖼️' },
+      { path: '/apps/pdf/word-to-pdf', title: 'Word to PDF', description: 'DOCX to PDF', icon: '📝' },
+      { path: '/apps/pdf/ppt-to-pdf', title: 'PPT to PDF', description: 'Slides to PDF', icon: '📊' },
+      { path: '/apps/pdf/excel-to-pdf', title: 'Excel to PDF', description: 'Spreadsheets to PDF', icon: '📈' },
+      { path: '/apps/pdf/html-to-pdf', title: 'HTML to PDF', description: 'Web pages to PDF', icon: '🌐' },
+    ],
+  },
+  {
+    title: 'Convert from PDF',
+    icon: '📤',
+    description: 'Convert PDF to other formats',
+    tools: [
+      { path: '/apps/pdf/to-jpg', title: 'PDF to JPG', description: 'Pages to images', icon: '🖼️' },
+      { path: '/apps/pdf/to-word', title: 'PDF to Word', description: 'PDF to DOCX', icon: '📝' },
+      { path: '/apps/pdf/to-ppt', title: 'PDF to PPT', description: 'PDF to slides', icon: '📊' },
+      { path: '/apps/pdf/to-excel', title: 'PDF to Excel', description: 'Tables to XLSX', icon: '📈' },
+      { path: '/apps/pdf/pdf-a', title: 'PDF to PDF/A', description: 'Archive format', icon: '📁' },
+    ],
+  },
+  {
+    title: 'Edit PDF',
+    icon: '✏️',
+    description: 'Edit and annotate PDF documents',
+    tools: [
       { path: '/apps/pdf/rotate', title: 'Rotate PDF', description: 'Rotate pages', icon: '🔄' },
+      { path: '/apps/pdf/page-numbers', title: 'Page Numbers', description: 'Add numbering', icon: '🔢' },
+      { path: '/apps/pdf/watermark', title: 'Watermark', description: 'Add watermark', icon: '💧' },
+      { path: '/apps/pdf/crop', title: 'Crop PDF', description: 'Trim margins', icon: '✂️' },
+      { path: '/apps/pdf/edit', title: 'Edit PDF', description: 'Add text & notes', icon: '✏️' },
     ],
   },
   {
-    title: 'Image Studio',
-    icon: '🖼️',
-    description: 'Compress, resize, convert, and edit images',
+    title: 'PDF Security',
+    icon: '🔒',
+    description: 'Protect and secure PDF documents',
     tools: [
-      { path: '/apps/img/compress', title: 'Compress', description: 'Reduce image size', icon: '📦' },
-      { path: '/apps/img/resize', title: 'Resize', description: 'Change dimensions', icon: '📐' },
-      { path: '/apps/img/convert', title: 'Convert', description: 'Change format', icon: '🔄' },
-      { path: '/apps/img/crop', title: 'Crop', description: 'Trim images', icon: '✂️' },
-      { path: '/apps/img/remove-bg', title: 'Remove BG', description: 'Transparent background', icon: '🎭' },
-      { path: '/apps/img/filter', title: 'Filters', description: 'Apply effects', icon: '🎨' },
-      { path: '/apps/img/metadata', title: 'Metadata', description: 'View/strip EXIF', icon: 'ℹ️' },
-      { path: '/apps/img/meme', title: 'Meme', description: 'Add text to images', icon: '😂' },
-    ],
-  },
-  {
-    title: 'AI Tools',
-    icon: '🤖',
-    description: 'AI-powered document processing',
-    tools: [
-      { path: '/apps/ai/ocr', title: 'OCR', description: 'Extract text from images', icon: '👁️' },
-      { path: '/apps/ai/summarize', title: 'Summarize', description: 'Get key points', icon: '📝' },
-      { path: '/apps/ai/chat-doc', title: 'Chat with PDF', description: 'Ask questions', icon: '💬' },
-      { path: '/apps/ai/translator', title: 'Translate', description: 'Multi-language', icon: '🌍' },
-      { path: '/apps/ai/quiz', title: 'Quiz Gen', description: 'Create quizzes', icon: '❓' },
-      { path: '/apps/ai/rewrite', title: 'Rewrite', description: 'Improve text', icon: '✨' },
-    ],
-  },
-  {
-    title: 'Text & Code',
-    icon: '📝',
-    description: 'Text editing and conversion tools',
-    tools: [
-      { path: '/apps/text/word-to-pdf', title: 'Word to PDF', description: 'DOCX converter', icon: '📄' },
-      { path: '/apps/text/markdown', title: 'Markdown', description: 'Editor & preview', icon: '📝' },
-      { path: '/apps/text/json-csv', title: 'JSON ↔ CSV', description: 'Data converter', icon: '📊' },
-      { path: '/apps/text/diff', title: 'Text Diff', description: 'Compare texts', icon: '🔍' },
-      { path: '/apps/text/count', title: 'Word Count', description: 'Text statistics', icon: '🔢' },
-      { path: '/apps/text/lorem', title: 'Lorem Ipsum', description: 'Dummy text', icon: '📜' },
-    ],
-  },
-  {
-    title: 'Utilities',
-    icon: '🔧',
-    description: 'Essential utility tools',
-    tools: [
-      { path: '/apps/util/zip', title: 'Create ZIP', description: 'Compress files', icon: '📦' },
-      { path: '/apps/util/unzip', title: 'Extract ZIP', description: 'Unpack archives', icon: '📂' },
-      { path: '/apps/util/password', title: 'Password', description: 'Generate secure', icon: '🔐' },
-      { path: '/apps/util/qrcode', title: 'QR Code', description: 'Generate QR', icon: '📱' },
-      { path: '/apps/util/barcode', title: 'Barcode', description: 'Generate barcode', icon: '📊' },
+      { path: '/apps/pdf/unlock', title: 'Unlock PDF', description: 'Remove password', icon: '🔓' },
+      { path: '/apps/pdf/protect', title: 'Protect PDF', description: 'Add password', icon: '🔒' },
+      { path: '/apps/pdf/sign', title: 'Sign PDF', description: 'Add signature', icon: '✍️' },
+      { path: '/apps/pdf/redact', title: 'Redact PDF', description: 'Black out text', icon: '◼️' },
+      { path: '/apps/pdf/compare', title: 'Compare PDF', description: 'Find differences', icon: '🔍' },
     ],
   },
 ];
@@ -96,12 +97,12 @@ export function renderDashboard(): string {
         <div class="hero-content">
           <h1 class="hero-title">Welcome to <span class="gradient-text">Office OS</span></h1>
           <p class="hero-subtitle">
-            Free online document tools. Edit PDFs, compress images, OCR, and more.
+            Free online PDF tools. Merge, split, compress, convert, and edit PDFs.
             All processing happens in your browser for <strong>complete privacy</strong>.
           </p>
           <div class="hero-stats">
             <div class="stat-item">
-              <span class="stat-value">40+</span>
+              <span class="stat-value">30+</span>
               <span class="stat-label">Tools</span>
             </div>
             <div class="stat-item">
